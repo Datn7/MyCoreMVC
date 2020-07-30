@@ -1,0 +1,48 @@
+﻿@model MyCoreMVC.ViewModels.BagListViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Bag</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="BagName" class="control-label"></label>
+                <input asp-for="BagName" class="form-control" />
+                <span asp-validation-for="BagName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BagPrice" class="control-label"></label>
+                <input asp-for="BagPrice" class="form-control" />
+                <span asp-validation-for="BagPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsPopular" /> @Html.DisplayNameFor(model => model.IsPopular)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProfileImage" class="control-label"></label>
+                <div class="custom-file">
+                    <input asp-for="ProfileImage" class="custom-file-input" id="customFile">
+                    <label class="custom-file-label" for="customFile">Choose file</label>
+                </div>
+                <span asp-validation-for="ProfileImage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -1,0 +1,23 @@
+﻿@model BagListViewModel
+@{
+    Layout = "_Layout";
+}
+
+    <h1>@Model.CurrentCategory</h1>
+
+    @foreach (var item in Model.Bags)
+    {
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <img src="@item.ProfilePicture" />
+                    <h3>ფასი: @item.Price</h3>
+
+                    <div>სახელი: <a asp-controller="Bag" asp-action="Details" asp-route-id="@item.id"> @item.Name </a></div>
+
+                    <p>კატეგორია: @item.Category</p>
+                </div>
+            </div>
+        </div>
+
+    }
